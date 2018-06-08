@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1528455395628.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "F44D6827",
+    "lastKnownWriteTime" : 7308604914264011873,
+    "last_content_update" : 1528455395628,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "4DD55CBA",
+        "caption" : "NewTaipei_Houseprice_S1",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=NewTaipei_Houseprice_S1&cache_key=4DD55CBA",
+        "displayedObservations" : "4590",
+        "environment" : "",
+        "object" : "NewTaipei_Houseprice_S1",
+        "preview" : "0",
+        "totalObservations" : "4590",
+        "variables" : "28"
+    },
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

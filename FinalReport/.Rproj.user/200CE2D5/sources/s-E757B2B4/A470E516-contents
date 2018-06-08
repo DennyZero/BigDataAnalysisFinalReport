@@ -1,0 +1,70 @@
+library(rpart.plot)
+library(rpart)
+testdata <- iris
+DT <- rpart(Species~.,data = testdata)
+prp(DT)
+
+
+
+library(mlbench)
+library(MASS)
+data(BostonHousing)
+fit <- glm(medv~.,data = BostonHousing)
+final_fit <- stepAIC(fit,direction = "both")
+summary(final_fit)$coefficients
+
+library(mlbench)
+library(MASS)
+data(BostonHousing)
+BostonHousing$test <- F
+BostonHousing[sample(1:nrow(BostonHousing),nrow(BostonHousing)/3),]$test <- T
+fit <- glm(medv~.,data = BostonHousing[BostonHousing$test == F,])
+final_fit <- stepAIC(fit,direction = "both")
+summary(final_fit)$coefficients
+
+library(mlbench)
+library(MASS)
+data(BostonHousing)
+BostonHousing$test <- F
+BostonHousing[sample(1:nrow(BostonHousing),nrow(BostonHousing)/3),]$test <- T
+fit <- glm(medv~.,data = BostonHousing[BostonHousing$test == F,])
+final_fit <- stepAIC(fit,direction = "both")
+PredictTest <- predict(final_fit,newdata = BostonHousing[BostonHousing$test==T,])
+cor(x = PredictTest,y = BostonHousing[BostonHousing$test==T,]$medv)
+
+library(mlbench)
+library(MASS)
+library(ggplot2)
+data(BostonHousing)
+BostonHousing$test <- F
+BostonHousing[sample(1:nrow(BostonHousing),nrow(BostonHousing)/3),]$test <- T
+fit <- glm(medv~.,data = BostonHousing[BostonHousing$test == F,])
+final_fit <- stepAIC(fit,direction = "both")
+PredictTest <- predict(final_fit,newdata = BostonHousing[BostonHousing$test==T,])
+TestData<-BostonHousing[BostonHousing$test==T,]
+TestData$pre <- PredictTest
+ggplot(TestData, 
+       aes(x = medv, 
+           y = pre)) + 
+  geom_point()+ geom_smooth(method='lm')
+
+library(mlbench)
+library(MASS)
+library(rpart)
+library(rpart.plot)
+data("Sonar")
+Sonar$test <- F
+Sonar[sample(1:nrow(Sonar),nrow(Sonar)/3),]$test <- T
+fit <- rpart(Class~.,data = Sonar[Sonar$test == F,])
+PredicTest <- predict(fit, newdata = Sonar[Sonar$test == T,])
+PredicTest2 <- ifelse(PredicTest>0.5, "M", "R")
+PredicTest3 <- Sonar[Sonar$test == T,]$Class
+PredicTest3 <- as.character(PredicTest3)
+a = 0
+for (i in 1:nrow(PredicTest2)) {
+  if (PredicTest2[i] == PredicTest3[i]){
+    a = a+1
+  }
+}
+correctRate = a/nrow(PredicTest2)
+correctRate 

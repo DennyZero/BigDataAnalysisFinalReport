@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1528455664332.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "CB4154B2",
+    "lastKnownWriteTime" : 7308604914264011873,
+    "last_content_update" : 1528455664332,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "9109F8B1",
+        "caption" : "S1_Price_ave",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=S1_Price_ave&cache_key=9109F8B1",
+        "displayedObservations" : "17",
+        "environment" : "",
+        "object" : "S1_Price_ave",
+        "preview" : "0",
+        "totalObservations" : "17",
+        "variables" : "2"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}
